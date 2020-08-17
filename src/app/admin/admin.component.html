@@ -1,0 +1,29 @@
+﻿
+<div class="container">
+  <div class="row">
+    <div >
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search data">
+    </div>
+  </div>
+<div class="card mt-4">
+    <table class="mytable">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th >sku</th>
+                <!-- <i (click)="onSortClick($event)" class="my-icon fa fa-chevron-up"></i></th> -->
+            <th>price</th>
+            <th>stock</th>
+            <th >title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let obj of products | filter:searchText">
+            <td>{{obj.sku}}</td>
+            <td>{{obj.price}}</td>
+            <td>{{obj.stock}}</td>
+            <td>{{obj.title}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
